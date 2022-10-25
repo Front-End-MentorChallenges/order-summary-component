@@ -1,0 +1,24 @@
+$breakpoints: (
+  "galaxy-fold": (
+    max-width: 290px,
+  ),
+  "phone": (
+    max-width: 760px,
+  ),
+  "tablet": (
+    max-width: 1020px,
+  ),
+  "desktop": (
+    max-width: 1200px,
+  ),
+) !default;
+
+@mixin respond-to-breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint value has not been defined to `#{breakpoint}`";
+  }
+}

@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;1,300&family=Baloo+Chettan+2:wght@800&family=Josefin+Sans:wght@400;700&family=Libre+Franklin:wght@300&family=Manrope:wght@800&family=Outfit:wght@500&family=Poppins:wght@400;500&family=Space+Grotesk&display=swap");
+@import "./variables";
+@import "./landscape";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.attribution {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 30px;
+}
+.attribution a {
+  font-size: 10px;
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background: url("../images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-behavior: smooth;
+}
+
+.container {
+  @include respond-to-breakpoint("phone") {
+    max-width: 350px;
+    margin-top: 15%;
+    height: 35rem;
+  }
+  @include respond-to-breakpoint("galaxy-fold") {
+    max-width: 250px;
+    height: 35rem;
+  }
+  max-width: 410px;
+  height: 40rem;
+  background: $background;
+  box-shadow: 0px 1px 20px $pale-blue;
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  & .banner {
+    @include respond-to-breakpoint("phone") {
+      height: 170px;
+    }
+    @include respond-to-breakpoint("galaxy-fold") {
+      height: 150px;
+    }
+    height: 200px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  .card_content {
+    margin: auto;
+    & h1 {
+      font-size: 20px;
+      padding-top: 10px;
+    }
+    & .description {
+      @include respond-to-breakpoint("galaxy-fold") {
+        width: 200px;
+        font-size: 12px;
+      }
+      width: 300px;
+      text-align: center;
+      font-size: 14px;
+      color: $dark-blue;
+      margin: auto;
+      padding-top: 20px;
+    }
+    .card_plan_price {
+      @include respond-to-breakpoint("galaxy-fold") {
+        margin: 10px;
+        padding: 5px;
+        width: 14rem;
+      }
+      display: inline-flex;
+      padding: 20px;
+      margin: 20px;
+      background: $very-pale-blue;
+      border-radius: 10px;
+      width: 20rem;
+      & .music_icon {
+        @include respond-to-breakpoint("galaxy-fold") {
+          img {
+            height: 40px;
+          }
+          margin-right: 15px;
+        }
+        margin-right: 10px;
+      }
+      .btn-change {
+        @include respond-to-breakpoint("galaxy-fold") {
+          margin: 0;
+          font-size: 10px;
+          margin-left: 50px;
+          margin-top: 15px;
+        }
+        background: none;
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        margin: 20px 0px 0px 70px;
+        &:hover {
+          text-decoration: none;
+          color: $blue-on-hover;
+        }
+      }
+      .pricing {
+        line-height: 25px;
+        & h6 {
+          @include respond-to-breakpoint("galaxy-fold") {
+            font-size: 12px;
+          }
+          font-size: 15px;
+          font-weight: bold;
+          color: $dark-blue;
+        }
+        & p {
+          @include respond-to-breakpoint("galaxy-fold") {
+            font-size: 12px;
+          }
+          color: $desaturated-blue;
+          font-size: 15px;
+        }
+      }
+    }
+    .card_footer {
+      display: grid;
+      margin: auto;
+      margin-top: 30px;
+      .btn-payment {
+        @include respond-to-breakpoint("phone") {
+          font-size: 15px;
+          font-weight: bold;
+          width: 270px;
+        }
+        @include respond-to-breakpoint("galaxy-fold") {
+          font-size: 12px;
+          font-weight: bold;
+          width: 200px;
+        }
+        background: $bright-blue;
+        color: #fff;
+        width: 300px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        box-shadow: 0px 0.5px 10px $bright-blue;
+        margin: auto;
+        cursor: pointer;
+        &:hover {
+          background: $blue-on-hover;
+        }
+      }
+      .btn-cancel {
+        @include respond-to-breakpoint("phone") {
+          margin-top: 30px;
+        }
+        @include respond-to-breakpoint("galaxy-fold") {
+          margin-top: 20px;
+        }
+        margin-top: 40px;
+        font-weight: bold;
+        color: $desaturated-blue;
+        font-size: 15px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: none;
+        &:hover {
+          color: $dark-blue;
+        }
+      }
+    }
+  }
+}
